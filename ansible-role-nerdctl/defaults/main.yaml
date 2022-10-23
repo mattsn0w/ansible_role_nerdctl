@@ -1,0 +1,20 @@
+---
+nerdctl_version: "1.0.0"
+nerdctl_arch: "amd64"
+
+# The user you want to enable container auto-starts for 
+lingering_user: "msnow"
+
+#nerdctl_download_url: "https://github.com/containerd/nerdctl/releases/download/v{{ nerdctl_version }}/nerdctl-{{ nerdctl_version }}-linux-{{ nerdctl_arch }}.tar.gz"
+
+nerdctl_download_url: "https://github.com/containerd/nerdctl/releases/download/v{{ nerdctl_version }}/nerdctl-full-{{ nerdctl_version }}-linux-amd64.tar.gz"
+
+nerdctl_tarball_path: "/tmp/nerdctl-{{ nerdctl_version }}-linux-{{ nerdctl_arch }}.tar.gz"
+
+ubuntu_packages:
+  - dbus-user-session
+  - uidmap
+  - systemd-container
+
+sysctl_d_config: "/etc/sysctl.d/99-rootless.conf"
+
